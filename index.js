@@ -4,7 +4,15 @@ const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-  res.send('this is a task app by MaRt');
+  res.json({
+     message: 'Welcome to the Task App API!',
+    data: {
+      tasks: [
+        { id: 1, title: 'Task 1', completed: false },
+        { id: 2, title: 'Task 2', completed: true },
+      ],
+    },
+  });
 });
 
 app.listen(PORT, () => {
